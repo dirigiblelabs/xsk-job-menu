@@ -11,7 +11,7 @@
  */
 exports.getTemplate = function () {
 	return {
-		"name": "job",
+		"name": "xsjob",
 		"label": " XS Scheduled Job",
 		"extension": "xsjob",
 		"data": JSON.stringify(JSON.parse('{\n' +
