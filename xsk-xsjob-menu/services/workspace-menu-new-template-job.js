@@ -10,21 +10,23 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 exports.getTemplate = function () {
-	return {
-		"name": "xsjob",
-		"label": " XS Scheduled Job",
-		"extension": "xsjob",
-		"data": JSON.stringify(JSON.parse('{\n' +
-			'    "description": "Read stock value",\n' +
-			'    "action": "yahoo:yahoo.xsjs::readStock",\n' +
-			'    "schedules": [\n' +
-			'       {\n' +
-			'          "description": "Read current stock value",\n' +
-			'          "xscron": "* * * * * * 59",\n' +
-			'          "parameter": {\n' +
-			'             "stock": "SAP.DE"\n' +
-			'             }\n' +
-			'       }\n' +
-			'    ]\n' +
-			'}'), null, 2)	};
+  return {
+    "name": "xsjob",
+    "label": "XS Scheduled Job",
+    "extension": "xsjob",
+    "isModel": true,
+    "data": `{
+  \"description\": \"Read stock value\",
+  \"action\": \"yahoo:yahoo.xsjs::readStock\",
+  \"schedules\": [
+    {
+      \"description\": \"Read current stock value\",
+      \"xscron\": \"* * * * * * 59\",
+      \"parameter\": {
+        \"stock\": \"SAP.DE\"
+      }
+    }
+  ]
+}`
+  };
 };
